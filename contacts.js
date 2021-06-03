@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const fs = require("fs");
 const path = require("path");
 
@@ -71,7 +73,7 @@ function addContact(name, email, phone) {
     const allContacts = JSON.parse(data);
 
     allContacts.push({
-      id: allContacts.length + 1,
+      id: uuidv4(),
       name: name,
       email: email,
       phone: phone,
